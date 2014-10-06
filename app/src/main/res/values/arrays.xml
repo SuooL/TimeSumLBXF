@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 时间花费项目 -->
+    <string-array name="TBL_EXPENDITURE_CATEGORY">
+        <item>学习</item>
+        <item>工作</item>
+        <item>娱乐</item>
+        <item>欢乐时光</item>
+    </string-array>
+
+    <!-- 时间花费子项目 -->
+    <!-- 学习子项目 -->
+    <string-array name="TBL_EXPENDITURE_SUB_CATEGORY_1">
+        <item>基础语言</item>
+        <item>脚本语言</item>
+        <item>Linux编程</item>
+        <item>Android</item>
+        <item>技术类书籍OR博客</item>
+    </string-array>
+
+    <!-- 工作项目 -->
+    <string-array name="TBL_EXPENDITURE_SUB_CATEGORY_2">
+        <item>APP</item>
+        <item>外包程序</item>
+    </string-array>
+
+    <!-- 娱乐子项目 -->
+    <string-array name="TBL_EXPENDITURE_SUB_CATEGORY_3">
+        <item>电脑游戏</item>
+        <item>手机游戏</item>
+        <item>社交网络</item>
+        <item>Music--Guitar</item>
+    </string-array>
+
+    <!-- 欢乐时光子项目 -->
+    <string-array name="TBL_EXPENDITURE_SUB_CATEGORY_4">
+        <item>文学阅读</item>
+        <item>博客写作</item>
+        <item>体育锻炼</item>
+        <item>陪黎怡</item>
+    </string-array>
+
+</resources>
