@@ -4,6 +4,19 @@
     <string name="app_name">TimeSumLBXF</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="title_activity_welcome">APP测试</string>
+
+    <!-- 时间管理原则 -->
+    <string name="welcome_title">柳比歇夫时间管理原则</string>
+    <string name="TIME_PRINCIPLE1">1.我不承担必须完成的任务</string>
+    <string name="TIME_PRINCIPLE2">2.我不接受紧急的任务</string>
+    <string name="TIME_PRINCIPLE3">3.一累马上停止工作去休息</string>
+    <string name="TIME_PRINCIPLE4">4.把累人的工作同愉快的工作结合一起</string>
+    <string name="TIME_PRINCIPLE5">5.睡得很多，十小时左右</string>
+    <string name="TO_MAIN">进入APP</string>
+    <string name="CLICK_ADD">记一笔</string>
+    <string name="title_activity_add">AddActivity</string>
+    <string name="ADD_TIME">增加记录</string>
+    <string name="title_activity_today_info">TodayInfo</string>
 
 </resources>

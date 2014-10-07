@@ -1,0 +1,114 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="suool.net.timesumlbxf.Activity.AddActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:text="@string/ADD_TIME"
+            android:layout_gravity="center"
+            android:textSize="34sp"
+            android:textColor="#1122aa"/>
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow android:layout_width="match_parent"
+            android:layout_height="60dp">
+
+            <ImageView
+                android:background="@drawable/ic_launcher"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/add_time"
+                android:stretchColumns= "1"
+                android:textSize="25sp"
+                android:text="时间长度"
+                android:layout_height="match_parent" />
+
+            <EditText
+                android:id="@+id/time_edit"
+                android:hint="请输入时间长度"/>
+
+        </TableRow>
+
+        <!-- 时间信息 -->
+        <TableRow android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/item"
+                android:textSize="25sp"
+                android:text="类别"/>
+            <TextView
+                android:id="@+id/category"
+                android:textSize="25sp"
+                android:gravity="right"
+                android:text="时间类别"/>
+
+        </TableRow>
+        <TableRow android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:background="@drawable/ic_launcher"
+                />
+            <TextView
+                android:id="@+id/time"
+                android:textSize="25sp"
+                android:text="当前时间"/>
+        </TableRow>
+        <TableRow android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:background="@drawable/ic_launcher"
+                />
+            <TextView
+                android:id="@+id/remark"
+                android:textSize="25sp"
+                android:text="备注信息"/>
+        </TableRow>
+        <TableRow>
+            <EditText
+                android:id="@+id/remark_text"
+                android:textSize="25sp"
+                android:layout_span="3"
+                android:stretchColumns = "0"
+                android:hint="请输入备注信息"/>
+        </TableRow>
+
+
+    </TableLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:paddingTop="15dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/add_ok"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+
+            android:text="确定"/>
+        <Button
+            android:id="@+id/add_cancel"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="取消"/>
+
+    </LinearLayout>
+
+</LinearLayout>
