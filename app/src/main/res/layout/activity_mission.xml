@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 日常任务完成情况布局文件 -->
+<!--
+    主要内容:
+    显示日常任务列表
+    显示任务完成情况
+    对应活动动作:
+        加载列表及完成情况
+        修改完成情况
+-->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="suool.net.timesumlbxf.Activity.MissionActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:gravity="center"
+        android:textSize="24sp"
+        android:textColor="#ff1ba400"
+        android:text="日常任务完成情况"/>
+
+    <!-- 记录列表 -->
+
+    <ListView
+        android:id="@+id/list_mission"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        </ListView>
+
+</LinearLayout>

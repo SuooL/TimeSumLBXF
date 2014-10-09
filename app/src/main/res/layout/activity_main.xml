@@ -1,3 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 主界面布局文件 -->
+<!--
+    主要内容:
+    APP主界面
+    显示增加记录按钮
+    显示目前各项记录情况:
+        本日记录
+        本周记录
+        本月记录
+        日常任务记录
+    活动对应动作:
+        点击增加记录按钮进入增加记录界面
+        点击各项记录列进入详细记录说明界面
+-->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -25,7 +40,7 @@
     <!-- 增加记录按钮 -->
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:orientation="vertical">
         <Button
             android:id="@+id/click_add"
@@ -121,6 +136,29 @@
                 android:layout_weight="1"
                 android:text="本月记录时间"/>
         </LinearLayout>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1px"
+            android:background="#ff00"
+            />
+
+        <!-- 日常常规任务 -->
+        <LinearLayout
+            android:id="@+id/info_mission"
+            android:paddingTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="常规任务完成情况"/>
+        </LinearLayout>
+
+
 
     </LinearLayout>
 </LinearLayout>

@@ -1,3 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- APP欢迎界面 -->
+<!--
+    主要内容:
+    显示柳比歇夫时间管理原则
+    进入APP按钮
+    对应活动动作:
+        点击按钮,进入主活动界面
+-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"

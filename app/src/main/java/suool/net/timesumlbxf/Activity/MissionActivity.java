@@ -4,35 +4,21 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.Window;
-import android.widget.ListView;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import suool.net.timesumlbxf.R;
-import suool.net.timesumlbxf.model.Mission;
-import suool.net.timesumlbxf.model.MissionAdapter;
 
-public class TodayInfo extends Activity {
-
-    private List<Mission> missionList = new ArrayList<Mission>();
+public class MissionActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_time_info);
-     //   loadMissionToday();       // 导入今日任务信息数据
-        MissionAdapter adapter = new MissionAdapter(TodayInfo.this, R.layout.mission_item, missionList);
-        ListView listView = (ListView) findViewById(R.id.mission_list);
-        listView.setAdapter(adapter);
+        setContentView(R.layout.activity_mission);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.today_info, menu);
+        getMenuInflater().inflate(R.menu.mission, menu);
         return true;
     }
 
@@ -47,7 +33,4 @@ public class TodayInfo extends Activity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
-
 }

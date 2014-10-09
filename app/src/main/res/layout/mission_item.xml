@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 自定义活动列表子项布局 -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 记录图片 -->
+    <ImageView
+        android:id="@+id/mission_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_launcher"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 记录类别属性 -->
+        <TextView
+            android:id="@+id/mission_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dip"
+            android:text="记录类别 "/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- 记录名称属性 -->
+            <TextView
+                android:id="@+id/mission_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="记录名称"/>
+
+            <!-- 记录时间长度属性 -->
+            <TextView
+                android:id="@+id/mission_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="时间长度"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>

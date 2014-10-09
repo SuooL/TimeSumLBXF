@@ -7,6 +7,7 @@
         <item>工作</item>
         <item>娱乐</item>
         <item>欢乐时光</item>
+        <item>日常MISSION</item>
     </string-array>
 
     <!-- 时间花费子项目 -->
@@ -39,6 +40,15 @@
         <item>博客写作</item>
         <item>体育锻炼</item>
         <item>陪黎怡</item>
+    </string-array>
+
+    <!-- 日常任务列表 -->
+    <string-array name="TBL_EXPENDITURE_CATEGORY_5">
+        <item>2道算法题目</item>
+        <item>英语单词50个或者英语阅读</item>
+        <item>技术博文1篇</item>
+        <item>技术文章,笔记-1.5小时</item>
+        <item>电子书阅读1小时</item>
     </string-array>
     
 

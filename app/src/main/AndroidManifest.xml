@@ -28,6 +28,10 @@
             android:name=".Activity.TodayInfo"
             android:label="@string/title_activity_today_info" >
         </activity>
+        <activity
+            android:name=".Activity.MissionActivity"
+            android:label="@string/title_activity_mission" >
+        </activity>
     </application>
 
 </manifest>

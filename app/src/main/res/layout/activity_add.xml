@@ -1,3 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 增加新纪录布局文件 -->
+<!--
+    主要内容:
+    增加记录,编辑记录的各项信息
+-->
+
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
