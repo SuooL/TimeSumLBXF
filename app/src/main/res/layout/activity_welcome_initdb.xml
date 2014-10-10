@@ -9,12 +9,10 @@
 -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ffc0a884"
-    tools:context="suool.net.timesumlbxf.Activity.WelcomeActivity">
+    android:background="#ffc0a884">
 
     <TextView
         android:id="@+id/welcome_title"

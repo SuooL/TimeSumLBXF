@@ -12,17 +12,17 @@ public class TimeSumDBInfo {
 
 
     private static String FieldNames[][] = {
-            {"ID","NAME","BUDGET"},
+            {"ID","NAME"},
             {"ID","NAME","PARENT_CATEGORY_ID"},
             {"ID", "AMOUNT", "EXPENDITURE_CATEGORY_ID",
                     "EXPENDITURE_SUB_CATEGORY_ID","DATE", "MEMO"}
     };//字段名
 
     private static String FieldTypes[][] = {
-            {"INTEGER PRIMARY KEY AUTOINCREMENT","text","DOUBLE"},
+            {"INTEGER PRIMARY KEY AUTOINCREMENT","text"},
             {"INTEGER PRIMARY KEY AUTOINCREMENT","TEXT","INTEGER"},
             {"INTEGER PRIMARY KEY AUTOINCREMENT","DOUBLE",
-                    "INTEGER","TEXT","TEXT"}
+                    "INTEGER","INTEGER","TEXT","TEXT"}
     };//字段类型
 
     public TimeSumDBInfo() {
