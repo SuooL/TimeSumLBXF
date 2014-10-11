@@ -1,5 +1,7 @@
 package suool.net.timesumlbxf.model;
 
+import android.util.Log;
+
 import java.util.Calendar;
 import java.util.TimeZone;
 
@@ -15,9 +17,11 @@ public class DateInfo {
     /**
      * 构造方法
      */
-    public void DateInfo() {
-        final Calendar c = Calendar.getInstance();
+    public DateInfo() {
+        Calendar c = Calendar.getInstance();
+
         c.setTimeZone(TimeZone.getTimeZone("GMT+8:00"));
+
         mYear = String.valueOf(c.get(Calendar.YEAR)); // 获取当前年份
         mMonth = String.valueOf(c.get(Calendar.MONTH) + 1);// 获取当前月份
         mDay = String.valueOf(c.get(Calendar.DAY_OF_MONTH));// 获取当前月份的日期号码
@@ -37,25 +41,31 @@ public class DateInfo {
         } else if ("7".equals(mWay)) {
             mWay = "六";
         }
+
+        Log.d("MyTest", mYear+" "+ mDay+" " +mMonth);
     }
 
+
+
     // 获取星期
-    public static String getmWay() {
+    public String getmWay() {
         return mWay;
     }
 
     // 获取日
-    public static String getmDay() {
+    public String getmDay() {
         return mDay;
     }
 
     // 获取月
-    public static String getmMonth() {
+    public String getmMonth() {
         return mMonth;
     }
 
     // 获取年
-    public static String getmYear() {
+    public String getmYear() {
         return mYear;
     }
+
+
 }

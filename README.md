@@ -19,7 +19,8 @@ Android Studio(0.8.6) + Gradle(1.12)
 所以项目结构是Android Studio的.如要导入Eclipse可能有些麻烦.
 
 ##开源库
-待定...
+[foo]:             "Android Wheel" 实现日期的三级联动效果的开源框架...可以用在多列选项中..
+
 
 License
 ============
