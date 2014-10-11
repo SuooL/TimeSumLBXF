@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.LinearLayout;
 
 import suool.net.timesumlbxf.R;
+import suool.net.timesumlbxf.model.Mission;
 
 
 public class MainActivity extends Activity implements View.OnClickListener{
@@ -23,24 +24,16 @@ public class MainActivity extends Activity implements View.OnClickListener{
         setContentView(R.layout.activity_main);
         Button button = (Button) findViewById(R.id.click_add);
         LinearLayout linearLayout_today = (LinearLayout) findViewById(R.id.info_today);
+        LinearLayout linearLayout_week = (LinearLayout) findViewById(R.id.info_week);
+        LinearLayout linearLayout_month = (LinearLayout) findViewById(R.id.info_month);
+        LinearLayout linearLayout_mission = (LinearLayout) findViewById(R.id.info_mission);
 
+        button.setOnClickListener(this);
+        linearLayout_today.setOnClickListener(this);
+        linearLayout_week.setOnClickListener(this);
+        linearLayout_month.setOnClickListener(this);
+        linearLayout_mission.setOnClickListener(this);
 
-
-        button.setOnClickListener(new Button.OnClickListener(){
-            @Override
-            public void onClick (View v){
-                Intent intent = new Intent(MainActivity.this, AddActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        linearLayout_today.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick (View v) {
-                Intent intent = new Intent(MainActivity.this, TodayInfo.class);
-                startActivity(intent);
-            }
-        });
     }
 
 
@@ -64,6 +57,32 @@ public class MainActivity extends Activity implements View.OnClickListener{
     }
 
     public void onClick (View v){
+        Intent intent;
+        switch (v.getId()) {
+            case R.id.click_add:
+                intent = new Intent(MainActivity.this, AddActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.info_today:
+                intent = new Intent(MainActivity.this, TodaySumActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.info_week:
+                intent = new Intent(MainActivity.this, WeekSumActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.info_month:
+                intent = new Intent(MainActivity.this, MonthSumActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.info_mission:
+                intent = new Intent(MainActivity.this, MissionActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+
+        }
 
     }
 }

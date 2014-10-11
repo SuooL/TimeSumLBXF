@@ -15,8 +15,11 @@
     <string name="CLICK_ADD">记一笔</string>
     <string name="title_activity_add">AddActivity</string>
     <string name="ADD_TIME">增加记录</string>
-    <string name="title_activity_today_info">TodayInfo</string>
+    <string name="title_activity_today_info">今日</string>
     <string name="title_activity_mission">MissionActivity</string>
     <string name="title_activity_init_db">initDBActivity</string>
+    <string name="title_activity_week_sum">WeekSumActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_month_sum">MonthSumActivity</string>
 
 </resources>

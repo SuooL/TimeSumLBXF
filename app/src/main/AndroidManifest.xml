@@ -18,9 +18,13 @@
         </activity>
 
         <activity
-            android:name=".Activity.TodayInfo"
+            android:name=".Activity.TodaySumActivity"
             android:label="@string/title_activity_today_info" >
         </activity>
+
+       <activity android:name=".Activity.WeekSumActivity"></activity>
+
+        <activity android:name=".Activity.MonthSumActivity"></activity>
 
         <activity
             android:name=".Activity.MissionActivity"

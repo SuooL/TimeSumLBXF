@@ -75,13 +75,13 @@ public class CommonData {
         category.clear();
         subcategory.clear();
         for(int i=0;i<2;i++){
-            loatCategoryData(i);
+            loadCategoryData(i);
         }
         num1 = 0;
         num2 = 0;
     }
 
-    public void loatCategoryData(int id){
+    public void loadCategoryData(int id){
         Cursor cursor = dbHelper.select(TimeSumDBInfo.getTableNames()[id], TimeSumDBInfo.getFieldNames()[id], null, null, null, null, null);
         while (cursor.moveToNext()) {
             switch (id) {

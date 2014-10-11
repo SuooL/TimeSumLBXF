@@ -39,8 +39,6 @@ public class InitDatabaseActivity extends Activity {
 
     private void initialDBData() {
         // 建立数据库
-//		deleteDatabase("mydb");
-//        db = new DBHelper(this, "mydb", null, 1);
         dbHelper = DBHelper.getInstance(this,"Mission.db", null, 2);
         DB = dbHelper.getWritableDatabase();
 

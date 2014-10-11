@@ -12,7 +12,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="#ffc0a884"
-    tools:context="suool.net.timesumlbxf.Activity.TodayInfo">
+    tools:context="suool.net.timesumlbxf.Activity.TodaySumActivity">
 
     <LinearLayout
         android:layout_width="wrap_content"
