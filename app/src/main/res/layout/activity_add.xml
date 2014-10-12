@@ -5,8 +5,6 @@
     增加记录,编辑记录的各项信息
 -->
 
-
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,7 +15,8 @@
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="60dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="#ffc0a884">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,29 +25,53 @@
             android:text="@string/ADD_TIME"
             android:layout_gravity="center"
             android:textSize="34sp"
-            android:textColor="#1122aa"/>
+            android:textColor="#000000"/>
     </LinearLayout>
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:stretchColumns= "2">
+        android:stretchColumns= "1">
 
         <TableRow android:layout_width="match_parent"
             android:layout_height="60dp">
 
-            <ImageView
-                android:background="@drawable/ic_launcher"
-                android:layout_height="wrap_content" />
             <TextView
                 android:id="@+id/add_time"
                 android:textSize="25sp"
-                android:text="时间长度"
+                android:textColor="#00ffcc"
+                android:text="时间长度:"
                 android:layout_height="match_parent" />
 
-            <EditText
-                android:id="@+id/et_add_time"
-                android:hint="请输入时间长度"/>
+            <RelativeLayout>
+                <Spinner
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/hour"
+                    />
+                <TextView
+                    android:id="@+id/tv_hour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/hour"
+                    android:layout_toEndOf="@id/hour"
+                    android:textSize="25sp"
+                    android:text="小时"/>
+                <Spinner
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_hour"
+                    android:id="@+id/minute"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/minute"
+                    android:layout_toEndOf="@id/minute"
+                    android:textSize="25sp"
+                    android:text="分钟"/>
+            </RelativeLayout>
+
 
         </TableRow>
 
@@ -58,38 +81,41 @@
             <TextView
                 android:id="@+id/item"
                 android:textSize="25sp"
-                android:text="类别"/>
-            <TextView
-                android:id="@+id/category"
-                android:textSize="25sp"
-                android:gravity="right"
-                android:text="时间类别"/>
-
+                android:textColor="#00ffcc"
+                android:text="记录类别:"/>
+            <RelativeLayout>
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/parent"
+                    />
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/parent"
+                    android:layout_toEndOf="@id/parent"
+                    android:id="@+id/sub"
+                    />
+            </RelativeLayout>
         </TableRow>
         <TableRow android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
-            <ImageView
-                android:background="@drawable/ic_launcher"
-                />
             <TextView
                 android:id="@+id/time_current"
                 android:textSize="25sp"
-                android:text="当前时间"/>
+                android:textColor="#00ffcc"
+                android:text="日期:"/>
             <TextView
                 android:id="@+id/tv_add_time"
                 android:textSize="24sp"/>
         </TableRow>
         <TableRow android:layout_width="fill_parent"
             android:layout_height="wrap_content">
-
-            <ImageView
-                android:background="@drawable/ic_launcher"
-                />
             <TextView
                 android:id="@+id/remark"
                 android:textSize="25sp"
-                android:text="备注信息"/>
+                android:textColor="#00ffcc"
+                android:text="备注信息:"/>
         </TableRow>
         <TableRow>
             <EditText

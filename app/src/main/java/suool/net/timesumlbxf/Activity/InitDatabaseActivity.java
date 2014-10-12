@@ -97,5 +97,13 @@ public class InitDatabaseActivity extends Activity {
             values.put("PARENT_CATEGORY_ID", "4");
             DB.insert("TBL_EXPENDITURE_SUB_CATEGORY", null, values);
         }
+        arr = res.getStringArray(R.array.TBL_EXPENDITURE_SUB_CATEGORY_5);
+        for (int i = 0; i < arr.length; i++) {
+            Log.i("TEST", arr[i]);
+            ContentValues values = new ContentValues();
+            values.put("name", arr[i]);
+            values.put("PARENT_CATEGORY_ID", "5");
+            DB.insert("TBL_EXPENDITURE_SUB_CATEGORY", null, values);
+        }
     }
 }

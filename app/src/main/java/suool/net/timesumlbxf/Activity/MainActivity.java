@@ -101,7 +101,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
         TextView tv_month = (TextView) findViewById(R.id.tv_month);
 
         tv_today.setText("今日日期: "+dateInfo.getmMonth()+"月"+dateInfo.getmDay()+"日");
-        tv_week.setText("本周:"+timeRange.getWeek_start()+"至"+timeRange.getWeek_end());
+        tv_week.setText("本周:星期"+timeRange.getWeek_start()+"至星期"+timeRange.getWeek_end());
         tv_month.setText("本月: "+timeRange.getDate_start()+"日至"+timeRange.getDate_end()+"日");
     }
 }
