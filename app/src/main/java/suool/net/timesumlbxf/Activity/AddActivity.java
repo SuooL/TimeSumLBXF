@@ -128,9 +128,13 @@ public class AddActivity extends Activity implements View.OnClickListener, Adapt
                 insertDB();
                 Intent intent = new Intent(AddActivity.this, MainActivity.class);
                 startActivity(intent);
+                finish();
             break;
             case R.id.add_cancel:
                 et_add_remark.setText(null);
+                Intent intent_can = new Intent(AddActivity.this, MainActivity.class);
+                startActivity(intent_can);
+                finish();
   //              et_add_time.setText(null);
                 break;
             default:
@@ -227,6 +231,7 @@ public class AddActivity extends Activity implements View.OnClickListener, Adapt
         values.put("DATE", dateInfo.getmMonth()+"月"+dateInfo.getmDay()+"日");
         values.put("MEMO", memo);
         DB.insert("TBL_EXPENDITURE", null, values);
+        Log.d(TAG, "选取的时间是"+String.valueOf(time));
         values.clear();
     }
 }
