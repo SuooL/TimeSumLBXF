@@ -36,15 +36,6 @@ public class MissionAdapter extends ArrayAdapter<Mission> {
     public View getView(int position, View convertView, ViewGroup parent) {
         Mission mission = getItem(position);
         View view = LayoutInflater.from(getContext()).inflate(resourceId, null);
-        ImageView missionImage = (ImageView) view.findViewById(R.id.mission_image);
-        TextView missionCategory = (TextView) view.findViewById(R.id.mission_category);
-        TextView missionName = (TextView) view.findViewById(R.id.mission_name);
-        TextView missionTime = (TextView) view.findViewById(R.id.mission_time);
-
-        missionImage.setImageResource(mission.getImageId());
-        missionCategory.setText(mission.getCategory());
-        missionName.setText(mission.getName());
-        missionTime.setText(String.valueOf(mission.getTimeLength()));
 
         return view;
     }

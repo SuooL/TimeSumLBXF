@@ -98,13 +98,17 @@
                     />
             </RelativeLayout>
         </TableRow>
-        <TableRow android:layout_width="match_parent"
+
+
+        <TableRow
+            android:id="@+id/tb_time_picker"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/time_current"
                 android:textSize="25sp"
                 android:textColor="#00ffcc"
-                android:text="日期:"/>
+                android:text="时间选择:"/>
             <TextView
                 android:id="@+id/tv_add_time"
                 android:textSize="24sp"/>

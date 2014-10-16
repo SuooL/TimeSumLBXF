@@ -15,14 +15,14 @@ public class TimeSumDBInfo {
             {"ID","NAME"},
             {"ID","NAME","PARENT_CATEGORY_ID"},
             {"ID", "AMOUNT", "EXPENDITURE_CATEGORY_ID",
-                    "EXPENDITURE_SUB_CATEGORY_ID","DATE", "MEMO"}
+                    "EXPENDITURE_SUB_CATEGORY_ID","DATE", "TIME","MEMO"}
     };//字段名
 
     private static String FieldTypes[][] = {
             {"INTEGER PRIMARY KEY AUTOINCREMENT","text"},
             {"INTEGER PRIMARY KEY AUTOINCREMENT","TEXT","INTEGER"},
             {"INTEGER PRIMARY KEY AUTOINCREMENT","DOUBLE",
-                    "INTEGER","INTEGER","TEXT","TEXT"}
+                    "INTEGER","INTEGER","TEXT","TEXT","TEXT"}
     };//字段类型
 
     public TimeSumDBInfo() {

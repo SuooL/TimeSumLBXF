@@ -1,5 +1,11 @@
 package suool.net.timesumlbxf.model;
 
+import android.util.Log;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 /**
  * Created by SuooL on 2014/10/9.
  */
@@ -11,6 +17,8 @@ public class TimeRange {
     private String date_end;
     private String month;
     private String year;
+    private int weekday;
+
 
     DateInfo dateInfo = new DateInfo();
 
@@ -22,6 +30,10 @@ public class TimeRange {
     public String getWeek_end() {
         week_end = dateInfo.getmWay();
         return week_end;
+    }
+
+    public int getDayOfWeek(){
+        return dateInfo.getiWeekday();
     }
 
     public String getDate_start() {
@@ -42,5 +54,10 @@ public class TimeRange {
     public String getYear() {
         year = dateInfo.getmYear();
         return year;
+    }
+
+    public int getWeekday() {
+        weekday = dateInfo.getmWeekday();
+        return weekday;
     }
 }

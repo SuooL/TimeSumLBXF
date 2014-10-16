@@ -1,53 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- 自定义活动列表子项布局 -->
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:id="@+id/hsv"
+android:layout_width="wrap_content"
+android:layout_height="80dip"
+android:scrollbars="none" >
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <!-- 记录图片 -->
-    <ImageView
-        android:id="@+id/mission_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/ic_launcher"/>
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
 
     <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:id="@+id/ll_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-        <!-- 记录类别属性 -->
         <TextView
-            android:id="@+id/mission_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dip"
-            android:text="记录类别 "/>
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="记录时间"/>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="记录类别" />
 
-            <!-- 记录名称属性 -->
-            <TextView
-                android:id="@+id/mission_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="记录名称"/>
-
-            <!-- 记录时间长度属性 -->
-            <TextView
-                android:id="@+id/mission_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="时间长度"/>
-
-        </LinearLayout>
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="时间长度"/>
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/ll_action"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@android:color/darker_gray"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:text="@string/lv_action1" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="2dip"
+            android:layout_marginRight="2dip"
+            android:background="@android:color/darker_gray"
+            android:paddingLeft="20dip"
+            android:paddingRight="20dip"
+            android:text="@string/lv_action2" />
+    </LinearLayout>
 </LinearLayout>
+
+</HorizontalScrollView>

@@ -21,5 +21,8 @@
     <string name="title_activity_week_sum">WeekSumActivity</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_month_sum">MonthSumActivity</string>
+    <string name="lv_action1">修改</string>
+    <string name="lv_action2">删除</string>
+    <string name="title_activity_dp_tp">DpTpActivity</string>
 
 </resources>

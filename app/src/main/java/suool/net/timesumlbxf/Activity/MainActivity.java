@@ -1,7 +1,9 @@
 package suool.net.timesumlbxf.Activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -28,6 +30,9 @@ import suool.net.timesumlbxf.model.TimeRange;
 
 
 public class MainActivity extends Activity implements View.OnClickListener{
+
+    DBSelector dbSelector = new DBSelector(this);
+
     TimeRange timeRange = new TimeRange();
     DateInfo dateInfo = new DateInfo();
 
@@ -78,6 +83,31 @@ public class MainActivity extends Activity implements View.OnClickListener{
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onBackPressed(){
+        super.onBackPressed();
+
+        AlertDialog.Builder dialogExit = new AlertDialog.Builder(MainActivity.this);
+        dialogExit.setTitle("确认");
+        dialogExit.setMessage("您确定要退出程序吗?");
+        dialogExit.setCancelable(false);
+
+        dialogExit.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                finish();
+            }
+        });
+
+        dialogExit.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+            }
+        });
+        dialogExit.show();
+
+    }
+
     public void onClick (View v){
         Intent intent;
         switch (v.getId()) {
@@ -115,84 +145,11 @@ public class MainActivity extends Activity implements View.OnClickListener{
         TextView tv_week_time = (TextView) findViewById(R.id.tv_week_time);
         TextView tv_month_time = (TextView) findViewById(R.id.tv_month_time);
 
-        tv_today.setText("今日日期: "+dateInfo.getmMonth()+"月"+dateInfo.getmDay()+"日");
-        tv_week.setText("本周:星期"+timeRange.getWeek_start()+"至星期"+timeRange.getWeek_end());
+        tv_today.setText("今日: "+dateInfo.getmMonth()+"月"+dateInfo.getmDay()+"日");
+        tv_week.setText("本周:周"+timeRange.getWeek_start()+"至周"+timeRange.getWeek_end());
         tv_month.setText("本月: "+timeRange.getDate_start()+"日至"+timeRange.getDate_end()+"日");
-        tv_today_time.setText("已记录:"+ String.valueOf(toadySum()) + "小时");
-        tv_week_time.setText("已记录:" + String.valueOf(toadySum())+ "小时");
-        tv_month_time.setText("已记录:" + String.valueOf(toadySum())+ "小时");
-
+        tv_today_time.setText("已记录:"+ String.valueOf(dbSelector.toadySum()) + "小时");
+        tv_week_time.setText("已记录:" + String.valueOf(dbSelector.weekSum())+ "小时");
+        tv_month_time.setText("已记录:" + String.valueOf(dbSelector.monthSum())+ "小时");
     }
-
-    public double toadySum(){
-        DBHelper dbHelper = DBHelper.getInstance(this,"Mission.db", null, 2);
-        SQLiteDatabase DB = dbHelper.getWritableDatabase();
-
-        String date = dateInfo.getmMonth()+"月"+dateInfo.getmDay()+"日";
-        Log.d("MyTest",date);
-        double sum = 0.0;
-        Cursor cursor = DB.rawQuery("select SUM(AMOUNT) from TBL_EXPENDITURE as TOTAL where DATE = ?",
-                new String[]{date});
-//        Cursor cursor = DB.rawQuery("select SUM(AMOUNT) from TBL_EXPENDITURE as TOTAL",
-//                null);
-        Log.d("MyTest", "SUM查询成功"+String.valueOf(cursor.getCount()));
-
-        if (cursor.getCount() != 0) {
-            cursor.moveToFirst();
-            sum = cursor.getDouble(cursor
-                    .getColumnIndex("SUM(AMOUNT)"));
-         //   sum = 2.0;
-        }
-
-        BigDecimal time = new BigDecimal(String.valueOf(sum));
-        time = time.setScale(2, BigDecimal.ROUND_HALF_UP);
-
-        return time.doubleValue();
-    }
-
-    public double weekSum(){
-        DBHelper dbHelper = DBHelper.getInstance(this,"Mission.db", null, 2);
-        SQLiteDatabase DB = dbHelper.getWritableDatabase();
-
-        String date = dateInfo.getmMonth()+"月"+dateInfo.getmDay()+"日";
-        Log.d("MyTest",date);
-        double sum = 0.0;
-        Cursor cursor = DB.rawQuery("select SUM(AMOUNT) from TBL_EXPENDITURE as TOTAL where DATE = ?",
-                new String[]{date});
-//        Cursor cursor = DB.rawQuery("select SUM(AMOUNT) from TBL_EXPENDITURE as TOTAL",
-//                null);
-        Log.d("MyTest", "SUM查询成功"+String.valueOf(cursor.getCount()));
-
-        if (cursor.getCount() != 0) {
-            cursor.moveToFirst();
-            sum = cursor.getDouble(cursor
-                    .getColumnIndex("SUM(AMOUNT)"));
-            //   sum = 2.0;
-        }
-        return sum;
-    }
-
-    public double monthSum(){
-        DBHelper dbHelper = DBHelper.getInstance(this,"Mission.db", null, 2);
-        SQLiteDatabase DB = dbHelper.getWritableDatabase();
-
-        String date = dateInfo.getmMonth()+"月"+dateInfo.getmDay()+"日";
-        Log.d("MyTest",date);
-        double sum = 0.0;
-        Cursor cursor = DB.rawQuery("select SUM(AMOUNT) from TBL_EXPENDITURE as TOTAL where DATE = ?",
-                new String[]{date});
-//        Cursor cursor = DB.rawQuery("select SUM(AMOUNT) from TBL_EXPENDITURE as TOTAL",
-//                null);
-        Log.d("MyTest", "SUM查询成功"+String.valueOf(cursor.getCount()));
-
-        if (cursor.getCount() != 0) {
-            cursor.moveToFirst();
-            sum = cursor.getDouble(cursor
-                    .getColumnIndex("SUM(AMOUNT)"));
-            //   sum = 2.0;
-        }
-        return sum;
-    }
-
-
 }
