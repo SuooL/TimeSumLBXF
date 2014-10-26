@@ -1,15 +1,10 @@
 package suool.net.timesumlbxf.Activity;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.nfc.Tag;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,21 +12,17 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import java.math.BigDecimal;
-import java.util.Date;
+import android.widget.Toast;
 
 import suool.net.timesumlbxf.R;
-import suool.net.timesumlbxf.db.DBHelper;
 import suool.net.timesumlbxf.db.DBSelector;
 import suool.net.timesumlbxf.model.DateInfo;
-import suool.net.timesumlbxf.model.Mission;
 import suool.net.timesumlbxf.model.TimeRange;
 
 
 public class MainActivity extends Activity implements View.OnClickListener{
 
-    DBSelector dbSelector = new DBSelector(this);
+    DBSelector dbSelector = new DBSelector();
 
     TimeRange timeRange = new TimeRange();
     DateInfo dateInfo = new DateInfo();
@@ -85,27 +76,28 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     @Override
     public void onBackPressed(){
-        super.onBackPressed();
 
-        AlertDialog.Builder dialogExit = new AlertDialog.Builder(MainActivity.this);
-        dialogExit.setTitle("确认");
-        dialogExit.setMessage("您确定要退出程序吗?");
-        dialogExit.setCancelable(false);
+    }
 
-        dialogExit.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                finish();
-            }
-        });
-
-        dialogExit.setNegativeButton("取消", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-            }
-        });
-        dialogExit.show();
-
+    // 点击两次back键退出程序
+    private long firstTime = 0;
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        // TODO Auto-generated method stub
+        switch(keyCode)
+        {
+            case KeyEvent.KEYCODE_BACK:
+                long secondTime = System.currentTimeMillis();
+                if (secondTime - firstTime > 2000) {           //如果两次按键时间间隔大于2秒，则不退出
+                    Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                    firstTime = secondTime;//更新firstTime
+                    return true;
+                } else {                                      //两次按键小于2秒时，退出应用
+                    System.exit(0);
+                }
+                break;
+        }
+        return super.onKeyUp(keyCode, event);
     }
 
     public void onClick (View v){
@@ -116,19 +108,23 @@ public class MainActivity extends Activity implements View.OnClickListener{
                 startActivity(intent);
                 break;
             case R.id.info_today:
-                intent = new Intent(MainActivity.this, TodaySumActivity.class);
+                intent = new Intent(MainActivity.this, ListViewShow.class);
+//                intent.putExtra("date_flag", 1);
                 startActivity(intent);
                 break;
             case R.id.info_week:
-                intent = new Intent(MainActivity.this, WeekSumActivity.class);
+                intent = new Intent(MainActivity.this, ListViewShow.class);
+                intent.putExtra("date_flag", 2);
                 startActivity(intent);
                 break;
             case R.id.info_month:
-                intent = new Intent(MainActivity.this, MonthSumActivity.class);
+                intent = new Intent(MainActivity.this, ListViewShow.class);
+                intent.putExtra("date_flag", 3);
                 startActivity(intent);
                 break;
             case R.id.info_mission:
-                intent = new Intent(MainActivity.this, MissionActivity.class);
+                intent = new Intent(MainActivity.this, ListViewShow.class);
+                intent.putExtra("date_flag", 4);
                 startActivity(intent);
                 break;
             default:

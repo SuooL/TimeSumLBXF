@@ -50,6 +50,19 @@ public class DpTpActivity extends Activity implements View.OnClickListener{
         iYear = calendar.get(Calendar.YEAR);
         iMonthOfYear = calendar.get(Calendar.MONTH);
         iDayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+
+        year = String.valueOf(iYear);
+        if (iMonthOfYear <9)
+        {
+            monthOfYear = "0"+String.valueOf(iMonthOfYear+1);
+        }
+        else
+            monthOfYear = String.valueOf(iMonthOfYear+1);
+        if (iDayOfMonth < 9){
+            dayOfMonth = "0"+String.valueOf(iDayOfMonth);
+        }
+        else
+            dayOfMonth = String.valueOf(iDayOfMonth);
         time = String.valueOf(calendar.get(Calendar.HOUR_OF_DAY))+"时"+String.valueOf(calendar.get(Calendar.MINUTE))+"分";
 
 

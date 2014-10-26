@@ -32,12 +32,12 @@ public class DateInfo {
      */
     public DateInfo() {
 
-        cal.setFirstDayOfWeek(Calendar.MONDAY);//设置一个星期的第一天，按中国的习惯一个星期的第一天是星期一
+ //       cal.setFirstDayOfWeek(Calendar.MONDAY);//设置一个星期的第一天，按中国的习惯一个星期的第一天是星期一
         //判断要计算的日期是否是周日，如果是则减一天计算周六的，否则会出问题，计算到下一周去了
         int dayWeek = cal.get(Calendar.DAY_OF_WEEK);//获得当前日期是一个星期的第几天
-        if(1 == dayWeek) {
-            cal.add(Calendar.DAY_OF_MONTH, -1);
-        }
+//        if(1 == dayWeek) {
+//            cal.add(Calendar.DAY_OF_MONTH, -1);
+//        }
 
         iWeekday = cal.get(Calendar.DAY_OF_WEEK);
         iYear = cal.get(Calendar.YEAR);
@@ -50,19 +50,19 @@ public class DateInfo {
         mMonth = String.valueOf(iMonth);   // 获取当前月份
         mDay = String.valueOf(iDay);       // 获取当前月份的日期号码
         mWay = String.valueOf(iWeekday);   // 当前周的第几日
-        if ("7".equals(mWay)) {
+        if ("1".equals(mWay)) {
             mWay = "天";
-        } else if ("1".equals(mWay)) {
-            mWay = "一";
         } else if ("2".equals(mWay)) {
-            mWay = "二";
+            mWay = "一";
         } else if ("3".equals(mWay)) {
-            mWay = "三";
+            mWay = "二";
         } else if ("4".equals(mWay)) {
-            mWay = "四";
+            mWay = "三";
         } else if ("5".equals(mWay)) {
-            mWay = "五";
+            mWay = "四";
         } else if ("6".equals(mWay)) {
+            mWay = "五";
+        } else if ("7".equals(mWay)) {
             mWay = "六";
         }
 
@@ -96,9 +96,9 @@ public class DateInfo {
             cal.add(Calendar.DAY_OF_MONTH, -1);
         }
         Log.d("MyTest","YYYYY要计算日期为:" + sdf.format(cal.getTime())); //输出要计算日期
-        cal.setFirstDayOfWeek(Calendar.MONDAY);//设置一个星期的第一天，按中国的习惯一个星期的第一天是星期一
+       // cal.setFirstDayOfWeek(Calendar.MONDAY);//设置一个星期的第一天，按中国的习惯一个星期的第一天是星期一
         int day = cal.get(Calendar.DAY_OF_WEEK);//获得当前日期是一个星期的第几天
-        cal.add(Calendar.DATE, cal.getFirstDayOfWeek()-day-1);//根据日历的规则，给当前日期减去星期几与一个星期第一天的差值
+        cal.add(Calendar.DATE, cal.getFirstDayOfWeek()-day);//根据日历的规则，给当前日期减去星期几与一个星期第一天的差值
 
         String[] date = new String[day];
 

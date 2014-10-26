@@ -11,12 +11,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import suool.net.timesumlbxf.R;
-import suool.net.timesumlbxf.model.Mission;
+import suool.net.timesumlbxf.model.MissionItem;
 import suool.net.timesumlbxf.model.MissionAdapter;
 
 public class TodaySumActivity extends Activity {
 
-    private List<Mission> missionList = new ArrayList<Mission>();
+    private List<MissionItem> missionItemList = new ArrayList<MissionItem>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +24,7 @@ public class TodaySumActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_time_info);
      //   loadMissionToday();       // 导入今日任务信息数据
-        MissionAdapter adapter = new MissionAdapter(TodaySumActivity.this, R.layout.mission_item, missionList);
+        MissionAdapter adapter = new MissionAdapter(TodaySumActivity.this, R.layout.mission_item, missionItemList);
         ListView listView = (ListView) findViewById(R.id.mission_list);
         listView.setAdapter(adapter);
     }
